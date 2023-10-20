@@ -5,11 +5,9 @@ A Rust library that provides simple macros to put above functions that automatic
 Example:
 
 From This
-
+```
 #[generate_function_schema]
-
  fn get_current_weather(location: &str, unit: Option<&str>) -> serde_json::Value {
- 
      json!({
          "location": location,
          "temperature": "70",
@@ -17,8 +15,11 @@ From This
          "forecast": ["sunny", "windy"],
      })
  })
+```
 
- Generate This Boilerplate Behind The Scenes
+ Generate This Boilerplate Behind The Scenes:
+
+ ```
     let functions = vec![
         ChatCompletionFunctionDefinition {
             name: "get_current_weather".into(),
@@ -39,3 +40,4 @@ From This
             })),
         },
     ];
+```
